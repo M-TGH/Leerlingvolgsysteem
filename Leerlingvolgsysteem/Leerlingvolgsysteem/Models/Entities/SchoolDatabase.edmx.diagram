@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f5cdb8ab96ee4781be7ddd5d3ecf26d6" Name="Diagram1">
+        <EntityTypeShape EntityType="Database1Model.Account" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Database1Model.AccountAuthorication" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Database1Model.AccountClass" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Database1Model.Class" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Database1Model.ClassCourse" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Database1Model.Course" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Database1Model.School" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Database1Model.SchoolAccount" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Database1Model.SchoolClass" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Database1Model.SchoolCourse" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Database1Model.Table" Width="1.5" PointX="6.75" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

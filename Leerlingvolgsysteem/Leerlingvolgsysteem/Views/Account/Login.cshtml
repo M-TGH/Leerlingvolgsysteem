@@ -1,0 +1,21 @@
+﻿@model Leerlingvolgsysteem.Models.ViewModels.AccountLoginViewModel
+@{
+
+<h2>Login</h2>
+    if (Model != null)
+    {
+        if (Model.Error != false)
+        {
+            <li>@Model.Message</li>
+        }
+    }
+    using (Html.BeginForm())
+    {
+        @Html.ValidationSummary();
+        <label>Username</label>
+        @Html.EditorFor(account => account.userName);
+        <label>Password</label>
+        @Html.PasswordFor(account => account.password);
+        <button type="submit">Login</button>
+    }
+}
