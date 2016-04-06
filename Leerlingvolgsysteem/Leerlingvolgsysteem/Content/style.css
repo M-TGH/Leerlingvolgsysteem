@@ -1,0 +1,19 @@
+﻿body {
+
+}
+.login-form-design{
+    border: 2px solid black;
+}
+input, select, textarea{
+    max-width: none;
+    background-color: black;
+    color: white;
+    border: none;
+}
+.login-input-design{
+    width: 100%;
+}
+.login_button{
+    background-color: Highlight;
+    color: white;
+}

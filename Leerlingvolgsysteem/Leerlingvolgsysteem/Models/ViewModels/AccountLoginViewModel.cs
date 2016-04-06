@@ -18,8 +18,12 @@ namespace Leerlingvolgsysteem.Models.ViewModels
         [Required(ErrorMessage = "Fill in a Password!")]
         public string password { get; set; }
 
+        //[Required(ErrorMessage = "Fill in an E-mail Adress")]
+        public string Email { get; set; }
+
         public int AuthId { get; set; }
         public string Message { get; set; }
         public Boolean Error { get; set; }
+        public int AuthoricationId { get; set; }
     }
 }

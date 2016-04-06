@@ -26,6 +26,9 @@ namespace Leerlingvolgsysteem.Controllers
                 var Loginstatus = LoginUserService.LoginAccount(AccountData);
                 if(Loginstatus.Error != true)
                 {
+                    Session["LoggedInStatus"] = true;
+                    Session["UserId"] = Loginstatus.userId;
+                    Session["UserAuthId"] = Loginstatus.AuthoricationId;
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -34,6 +37,27 @@ namespace Leerlingvolgsysteem.Controllers
                 }
             }
             return View();
+        }
+        public ActionResult LogOut()
+        {
+            Session["LoggedInStatus"] = null;
+            return RedirectToAction("Login", "Account");
+        }
+        public ActionResult PasswordReset()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult PasswordReset(AccountLoginViewModel Account)
+        {
+            if (ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
+                return View();
+            } 
         }
     }
 }

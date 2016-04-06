@@ -27,5 +27,6 @@ namespace Leerlingvolgsysteem.Models.Entities
         public System.DateTime dateOfBirth { get; set; }
         public string password { get; set; }
         public string userName { get; set; }
+        public int authorication { get; set; }
     }
 }

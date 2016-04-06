@@ -24,6 +24,7 @@ namespace Leerlingvolgsysteem.Models.Services
                 AccountModel.userId = GetAccount.Id;
                 AccountModel.Error = false;
                 AccountModel.Message = "You've successfully logged in!";
+                AccountModel.AuthoricationId = GetAccount.authorication;
             }
             else
             {

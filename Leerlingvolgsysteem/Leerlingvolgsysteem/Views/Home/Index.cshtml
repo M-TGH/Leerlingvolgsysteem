@@ -1,6 +1,21 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    if (Session["LoggedInStatus"] == null)
+    {
+        Response.Redirect("~/Account/Login");
+    }
+    //Temporary solution Load in Layouts
+    if ((int)Session["UserAuthId"] == 1)
+    {
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+    if ((int)Session["UserAuthId"] == 2)
+    {
+        Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+    }
+    if ((int)Session["UserAuthId"] == 3)
+    {
+        Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    }
 }
 
 <h2>loggedIn</h2>

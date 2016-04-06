@@ -1,21 +1,59 @@
 ﻿@model Leerlingvolgsysteem.Models.ViewModels.AccountLoginViewModel
-@{
-
-<h2>Login</h2>
-    if (Model != null)
-    {
-        if (Model.Error != false)
-        {
-            <li>@Model.Message</li>
-        }
+    @{ 
+        Layout = null;
     }
-    using (Html.BeginForm())
-    {
-        @Html.ValidationSummary();
-        <label>Username</label>
-        @Html.EditorFor(account => account.userName);
-        <label>Password</label>
-        @Html.PasswordFor(account => account.password);
-        <button type="submit">Login</button>
-    }
-}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+        <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            @using (Html.BeginForm())
+            {
+                <div class="col-md-4 col-sm-8 login-form-design">
+                    <div class="row">
+                        <ul>
+                            @if (Model != null)
+                            {
+                                if (Model.Error != false)
+                                {
+                                    <li>@Model.Message</li>
+                                }
+                            }
+                            @Html.ValidationSummary()
+                        </ul>
+                        <div class="col-md-offset-1 col-md-10">
+                            <label>Username</label>
+                            <br />
+                            @Html.EditorFor(account => account.userName, new { @class = "login-input-design" })
+                        </div>
+                        <div class="col-md-offset-1 col-md-10">
+                            <label>Password</label>
+                            <br />
+                            @Html.PasswordFor(account => account.password, new { @class = "login-input-design" })
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-offset-4 col-md-4">
+                                    <button class="login_button" type="submit">Login</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <ul>
+                                <li><a href="@Url.Action("PasswordReset", "Account")">Forgot password?</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </body>
+</html>
