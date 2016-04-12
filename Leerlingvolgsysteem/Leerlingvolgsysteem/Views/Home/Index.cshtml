@@ -1,9 +1,8 @@
-﻿@{
-    if (Session["LoggedInStatus"] == null)
-    {
-        Response.Redirect("~/Account/Login");
-    }
-    //Temporary solution Load in Layouts
+﻿@if (Session["LoggedInStatus"] == null)
+{
+    Layout = null;
+}
+else {
     if ((int)Session["UserAuthId"] == 1)
     {
         Layout = "~/Views/Shared/_AdminLayout.cshtml";

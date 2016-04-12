@@ -1,6 +1,24 @@
 ﻿@model Leerlingvolgsysteem.Models.ViewModels.AccountLoginViewModel
     @{ 
-        Layout = null;
+        if (Session["LoggedInStatus"] == null)
+        {
+            Layout = null;
+
+        }
+        else {
+            if ((int)Session["UserAuthId"] == 1)
+            {
+                Layout = "~/Views/Shared/_AdminLayout.cshtml";
+            }
+            if ((int)Session["UserAuthId"] == 2)
+            {
+                Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+            }
+            if ((int)Session["UserAuthId"] == 3)
+            {
+                Layout = "~/Views/Shared/_StudentLayout.cshtml";
+            }
+        }
     }
     <!DOCTYPE html>
     <html>
@@ -40,17 +58,15 @@
                             @Html.PasswordFor(account => account.password, new { @class = "login-input-design" })
                         </div>
                         <div class="col-md-12">
-                            <div class="row">
                                 <div class="col-md-offset-4 col-md-4">
                                     <button class="login_button" type="submit">Login</button>
                                 </div>
-                            </div>
                         </div>
-                        <div class="col-md-12 text-center">
+                        @*<div class="col-md-12 text-center">
                             <ul>
                                 <li><a href="@Url.Action("PasswordReset", "Account")">Forgot password?</a></li>
                             </ul>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
             }
