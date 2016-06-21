@@ -248,6 +248,8 @@
     <Content Include="Views\Shared\_TeacherLayout.cshtml" />
     <Content Include="Views\LayOut\Index.cshtml" />
     <Content Include="Views\Account\PasswordReset.cshtml" />
+    <Content Include="Views\Home\Messages.cshtml" />
+    <Content Include="Views\Home\Mail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

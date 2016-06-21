@@ -35,38 +35,30 @@
         <div class="container">
             @using (Html.BeginForm())
             {
-                <div class="col-md-4 col-sm-8 login-form-design">
+                <div class="col-md-offset-4 col-md-4 col-sm-8 login-form-design">
                     <div class="row">
-                        <ul>
-                            @if (Model != null)
-                            {
-                                if (Model.Error != false)
-                                {
-                                    <li>@Model.Message</li>
-                                }
-                            }
-                            @Html.ValidationSummary()
-                        </ul>
-                        <div class="col-md-offset-1 col-md-10">
-                            <label>Username</label>
-                            <br />
-                            @Html.EditorFor(account => account.userName, new { @class = "login-input-design" })
+                        <div class="col-md-offset-1 col-md-10 input-design">
+                            @Html.EditorFor(account => account.userName, new { @class = "login-input-design", htmlAttributes = new { placeholder = "Gebruikersnaam" } })
                         </div>
-                        <div class="col-md-offset-1 col-md-10">
-                            <label>Password</label>
-                            <br />
-                            @Html.PasswordFor(account => account.password, new { @class = "login-input-design" })
+                        <div class="col-md-offset-1 col-md-10 input-design">
+                            @Html.PasswordFor(account => account.password, new { @class = "login-input-design", htmlAttributes = new { placeholder = "Wachtwoord" } })
                         </div>
-                        <div class="col-md-12">
-                                <div class="col-md-offset-4 col-md-4">
+                        <div class="col-md-12 input-design">
+                                <div class="col-md-offset-3 col-md-6">
                                     <button class="login_button" type="submit">Login</button>
+                                    <p class="text-center"><a href="@Url.Action("PasswordReset", "Account")">Forgot password?</a></p>
+                                    <ul class="error-message text-center">
+                                        @if (Model != null)
+                                        {
+                                            if (Model.Error != false)
+                                            {
+                                                <li>@Model.Message</li>
+                                            }
+                                        }
+                                        @Html.ValidationSummary()
+                                    </ul>
                                 </div>
                         </div>
-                        @*<div class="col-md-12 text-center">
-                            <ul>
-                                <li><a href="@Url.Action("PasswordReset", "Account")">Forgot password?</a></li>
-                            </ul>
-                        </div>*@
                     </div>
                 </div>
             }

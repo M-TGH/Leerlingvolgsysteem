@@ -9,11 +9,41 @@ input, select, textarea{
     background-color: black;
     color: white;
     border: none;
-}
-.login-input-design{
     width: 100%;
+    padding: 5px;
+}
+.input-design{
+    margin-top: 25px;
 }
 .login_button{
-    background-color: Highlight;
+    background-color: deepskyblue;
     color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 25px;
+    transition-duration: 0.5s;
+}
+.login_button:hover, .login_button:focus{
+   background-color: dodgerblue;
+}
+.error-message{
+    text-decoration: none;
+    color: red;
+    padding: 0;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+.new-mail-button-design{
+    width: 100%;
+    height: 50px;
+    background-color: lightgrey;
+    color: black;
+    border-radius: 0;
+}
+.new-mail-button-design:hover{
+    color: white;
+    background-color: darkslategrey;
 }

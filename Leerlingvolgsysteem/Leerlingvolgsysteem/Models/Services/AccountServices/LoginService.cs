@@ -18,7 +18,7 @@ namespace Leerlingvolgsysteem.Models.Services
 
             var GetAccount = dbContext.Account.FirstOrDefault(us => us.userName == AccountData.userName && us.password == AccountData.password);
 
-            if(GetAccount != null)
+            if (GetAccount != null)
             {
                 var AccountAuth = dbContext.AccountAuthorication.FirstOrDefault(us => us.UserId == GetAccount.Id);
                 AccountModel.userId = GetAccount.Id;
@@ -32,6 +32,16 @@ namespace Leerlingvolgsysteem.Models.Services
                 AccountModel.Message = "Password and/or Username doesn't exists!";
             }
             return AccountModel;
-        } 
+        }
+        //<Author> Tim Prosé </Author>
+        public string ForgotPassword(string Email)
+        {
+            return null;
+        }
+        //<Author> Tim Prosé </Author>
+        public string ResetPassword(string Email)
+        {
+            return null;
+        }
     }
 }
